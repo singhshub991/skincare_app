@@ -80,11 +80,10 @@ class StreakScreen extends StatelessWidget {
                       ),
                       child: LineChart(
                         LineChartData(
-                          gridData: FlGridData(show: false),
-
+                          gridData: FlGridData(show: true),
                           titlesData: FlTitlesData(
                             leftTitles: AxisTitles(
-                              drawBelowEverything: false, // Hide Y-axis labels
+                              drawBelowEverything: true,
                             ),
                             rightTitles: AxisTitles(
                               drawBelowEverything: false, // Hide right Y-axis labels if any
@@ -126,7 +125,7 @@ class StreakScreen extends StatelessWidget {
                               spots:model.streakData??[],
                               isCurved: true,
                               color: Color(0XFF964F66),
-                              dotData: FlDotData(show: false),
+                              dotData: FlDotData(show: true),
                               belowBarData: BarAreaData(
                                 show: true,
                                 gradient: LinearGradient(

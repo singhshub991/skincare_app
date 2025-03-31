@@ -23,7 +23,7 @@ class HomePageViewModel extends BaseViewModel {
 
   getHomeData() async {
     try{
-      setState(ViewState.busy);
+      // setState(ViewState.busy);
       String? uid= await StorageUtils.getString("uid");
 
       if(uid !=null && uid.isNotEmpty) {

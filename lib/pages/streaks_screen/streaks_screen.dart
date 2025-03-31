@@ -32,7 +32,7 @@ class StreakScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Today's Goal: ${model.todayGoal} streak days",
+                    Text("Today's Goal: ${model.todayGoal !=null ?model.todayGoal :0} streak days",
                         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                     // SizedBox(height: 8),
                     Container(
@@ -47,7 +47,7 @@ class StreakScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text("Streak Days", style: TextStyle(fontSize: 16)),
-                          Text("${model.streakDays}",
+                          Text("${model.streakDays !=null ?model.streakDays :0}",
                               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                         ],
                       ),
@@ -56,7 +56,7 @@ class StreakScreen extends StatelessWidget {
                     Column(crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text("Daily Streak", style: TextStyle(fontSize: 16)),
-                        Text("${model.dailyStreak}",
+                        Text("${model.dailyStreak !=null ?model.dailyStreak :0}",
                             style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
                       ],
                     ),
@@ -64,7 +64,7 @@ class StreakScreen extends StatelessWidget {
                     Row(
                       children: [
                         Text("Last 30 Days", style: TextStyle(color: Color(0XFF964F66))),
-                        Text("+${model.percentageChange}%", style: TextStyle(color: Colors.green)),
+                        Text("+${model.percentageChange !=null ?model.percentageChange :0}%", style: TextStyle(color: Colors.green)),
                       ],
                     ),
 
@@ -97,7 +97,7 @@ class StreakScreen extends StatelessWidget {
                                 getTitlesWidget: (value, meta) {
                                   // Convert value back to readable date
                                   DateTime date =
-                                  DateTime.fromMillisecondsSinceEpoch(model.firstX!.toInt())
+                                  DateTime.fromMillisecondsSinceEpoch(model.firstX !=null ?model.firstX!.toInt() :0)
                                       .add(Duration(days: value.toInt()));
 
                                   return Text(
